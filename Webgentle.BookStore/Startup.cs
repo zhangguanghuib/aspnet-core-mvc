@@ -26,6 +26,23 @@ namespace Webgentle.BookStore
                 app.UseDeveloperExceptionPage();
             }
 
+            app.Use(async (context, next) => {
+                await context.Response.WriteAsync("Hellow from my first middleware<br/>");
+                await next();
+                await context.Response.WriteAsync("Hellow from my first middleware<br/>");
+            });
+
+            app.Use(async (context, next) => {
+                await context.Response.WriteAsync("Hellow from my second middleware");
+                await next();
+                await context.Response.WriteAsync("Hellow from my second middleware<br/>");
+            });
+
+            app.Use(async (context, next) => {
+                await context.Response.WriteAsync("Hellow from my third middleware");
+                await next();
+            });
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -33,6 +50,14 @@ namespace Webgentle.BookStore
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("Hello World!");
+                });
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGet("/Guanghui", async context =>
+                {
+                    await context.Response.WriteAsync("Hello Guanghui!");
                 });
             });
         }

@@ -5,3 +5,5 @@
 /.vs
 /Webgentle.BookStore/obj
 /Webgentle.BookStore/.vs/Webgentle.BookStore/v16
+/Webgentle.BookStore/.vs/Webgentle.BookStore/config
+/Webgentle.BookStore/bin/Debug/netcoreapp3.1
