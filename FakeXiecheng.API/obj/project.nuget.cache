@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sJoKfGyNmRcKUWNKj/8etx/mRfiX+RGqDbXclgDW5c7O5aQpZ6Lsr/+XWsn2I6K3VJDif/E1eRGjG69Mzpy6oQ==",
+  "dgSpecHash": "XpLot9hdNYazRSQ5beSlPJPs+YN/HnIDVrfgVg/pbsN0/KOiMFG9d9b6Ea6Jp/gsxFehEVaQ+/c5RhHBbrY8AQ==",
   "success": true,
-  "projectFilePath": "D:\\repos\\aspnetcore\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
+  "projectFilePath": "D:\\repos\\aspnetcore\\aspnet-core-mvc\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

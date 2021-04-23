@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\repos\\aspnetcore\\FakeXiecheng.API\\FakeXiecheng.API.csproj": {}
+    "D:\\repos\\aspnetcore\\aspnet-core-mvc\\FakeXiecheng.API\\FakeXiecheng.API.csproj": {}
   },
   "projects": {
-    "D:\\repos\\aspnetcore\\FakeXiecheng.API\\FakeXiecheng.API.csproj": {
+    "D:\\repos\\aspnetcore\\aspnet-core-mvc\\FakeXiecheng.API\\FakeXiecheng.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repos\\aspnetcore\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
+        "projectUniqueName": "D:\\repos\\aspnetcore\\aspnet-core-mvc\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
         "projectName": "FakeXiecheng.API",
-        "projectPath": "D:\\repos\\aspnetcore\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
+        "projectPath": "D:\\repos\\aspnetcore\\aspnet-core-mvc\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
         "packagesPath": "C:\\Users\\guazha\\.nuget\\packages\\",
-        "outputPath": "D:\\repos\\aspnetcore\\FakeXiecheng.API\\obj\\",
+        "outputPath": "D:\\repos\\aspnetcore\\aspnet-core-mvc\\FakeXiecheng.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
