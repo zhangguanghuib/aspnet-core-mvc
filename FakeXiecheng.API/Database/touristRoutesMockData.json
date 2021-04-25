@@ -7,6 +7,10 @@
     "discountPercentage": 0.1,
     "features": "<p>吃住行娱乐购买打牌</p>",
     "Fees": "<p>交通费用全部报销</p>",
-    "notes": "<p>小心危险和山贼</p>"
+    "notes": "<p>小心危险和山贼</p>",
+    "rating": 3.5,
+    "travelDays": 8,
+    "tripType": 1,
+    "departureCity": 2 
   }
 ]
