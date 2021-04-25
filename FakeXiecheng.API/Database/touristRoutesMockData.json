@@ -1,16 +1,16 @@
 [
   {
     "id": "106E9A23-681C-4206-A197-C14D58221410",
-    "title": "áÔÉ½",
-    "description": "áÔÉ½ÕæºÃÍæ",
+    "title": "åå±±",
+    "description": "åå±±çœŸå¥½ç©",
     "originalPrice": 11999.99,
     "discountPercentage": 0.1,
-    "features": "<p>³Ô×¡ĞĞÓéÀÖ¹ºÂò´òÅÆ</p>",
-    "Fees": "<p>½»Í¨·ÑÓÃÈ«²¿±¨Ïú</p>",
-    "notes": "<p>Ğ¡ĞÄÎ£ÏÕºÍÉ½Ôô</p>",
+    "features": "<p>åƒå–ç©ä¹</p>",
+    "Fees": "<p>è´¹ç”¨å…¨åŒ…</p>",
+    "notes": "<p>æ³¨æ„å°å·</p>",
     "rating": 3.5,
     "travelDays": 8,
     "tripType": 1,
-    "departureCity": 2 
+    "departureCity": 2
   }
 ]
