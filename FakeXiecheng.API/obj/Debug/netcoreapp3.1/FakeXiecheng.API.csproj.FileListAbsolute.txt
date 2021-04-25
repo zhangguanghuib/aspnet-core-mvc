@@ -59,3 +59,5 @@ D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\Mic
 D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\Database\touristRoutePicturesMockData.json
+D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\Database\touristRoutesMockData.json
