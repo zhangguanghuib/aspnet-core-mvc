@@ -61,3 +61,5 @@ D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\New
 D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\Database\touristRoutePicturesMockData.json
 D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\Database\touristRoutesMockData.json
+D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\repos\aspnetcore\aspnet-core-mvc\FakeXiecheng.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

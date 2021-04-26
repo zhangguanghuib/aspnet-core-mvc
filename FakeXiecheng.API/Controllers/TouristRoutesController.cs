@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace FakeXiecheng.API.Controllers
 {
@@ -14,10 +15,13 @@ namespace FakeXiecheng.API.Controllers
     public class TouristRoutesController : ControllerBase
     {
         private ITouristRouteRepository _touristRouteRepository;
+        private readonly IMapper _mapper;
 
-        public TouristRoutesController(ITouristRouteRepository touristRouteRepository)
+        public TouristRoutesController(ITouristRouteRepository touristRouteRepository,
+            IMapper mapper)
         {
             this._touristRouteRepository = touristRouteRepository;
+            this._mapper = mapper;
         }
 
         [HttpGet]
@@ -28,7 +32,8 @@ namespace FakeXiecheng.API.Controllers
             {
                 return NotFound("没有旅游路线");
             }
-            return Ok(touristRouteFromRepo);
+            var touristRoutesDto = _mapper.Map<IEnumerable<TouristRouteDto>>(touristRouteFromRepo);
+            return Ok(touristRoutesDto);
         }
 
         [HttpGet("{touristRouteId}")]
@@ -40,22 +45,23 @@ namespace FakeXiecheng.API.Controllers
                 return NotFound($"旅游路线{touristRouteId}找不到");
             }
 
-            var touristRouteDto = new TouristRouteDto()
-            {
-                Id = touristRouteFromRepo.Id,
-                Title = touristRouteFromRepo.Title,
-                Description = touristRouteFromRepo.Description,
-                Price = touristRouteFromRepo.OriginalPrice * (decimal)(touristRouteFromRepo.DiscountPercentage),
-                CreatedTime = touristRouteFromRepo.CreatedTime,
-                UpdateTime = touristRouteFromRepo.UpdateTime,
-                Features = touristRouteFromRepo.Features,
-                Fees = touristRouteFromRepo.Fees,
-                Notes = touristRouteFromRepo.Notes,
-                Rating = touristRouteFromRepo.Rating,
-                TravelDays = touristRouteFromRepo.TravelDays.ToString(),
-                TripType = touristRouteFromRepo.TripType.ToString(),
-                DepartureCity = touristRouteFromRepo.DepartureCity.ToString()
-            };
+            //var touristRouteDto = new TouristRouteDto()
+            //{
+            //    Id = touristRouteFromRepo.Id,
+            //    Title = touristRouteFromRepo.Title,
+            //    Description = touristRouteFromRepo.Description,
+            //    Price = touristRouteFromRepo.OriginalPrice * (decimal)(touristRouteFromRepo.DiscountPercentage),
+            //    CreatedTime = touristRouteFromRepo.CreatedTime,
+            //    UpdateTime = touristRouteFromRepo.UpdateTime,
+            //    Features = touristRouteFromRepo.Features,
+            //    Fees = touristRouteFromRepo.Fees,
+            //    Notes = touristRouteFromRepo.Notes,
+            //    Rating = touristRouteFromRepo.Rating,
+            //    TravelDays = touristRouteFromRepo.TravelDays.ToString(),
+            //    TripType = touristRouteFromRepo.TripType.ToString(),
+            //    DepartureCity = touristRouteFromRepo.DepartureCity.ToString()
+            //};
+            var touristRouteDto = _mapper.Map<TouristRouteDto>(touristRouteFromRepo);
 
             return Ok(touristRouteDto);
         }
