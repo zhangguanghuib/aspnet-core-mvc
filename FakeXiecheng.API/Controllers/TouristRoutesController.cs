@@ -1,4 +1,5 @@
-﻿using FakeXiecheng.API.Services;
+﻿using FakeXiecheng.API.Dtos;
+using FakeXiecheng.API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -38,7 +39,25 @@ namespace FakeXiecheng.API.Controllers
             {
                 return NotFound($"旅游路线{touristRouteId}找不到");
             }
-            return Ok(touristRouteFromRepo);
+
+            var touristRouteDto = new TouristRouteDto()
+            {
+                Id = touristRouteFromRepo.Id,
+                Title = touristRouteFromRepo.Title,
+                Description = touristRouteFromRepo.Description,
+                Price = touristRouteFromRepo.OriginalPrice * (decimal)(touristRouteFromRepo.DiscountPercentage),
+                CreatedTime = touristRouteFromRepo.CreatedTime,
+                UpdateTime = touristRouteFromRepo.UpdateTime,
+                Features = touristRouteFromRepo.Features,
+                Fees = touristRouteFromRepo.Fees,
+                Notes = touristRouteFromRepo.Notes,
+                Rating = touristRouteFromRepo.Rating,
+                TravelDays = touristRouteFromRepo.TravelDays.ToString(),
+                TripType = touristRouteFromRepo.TripType.ToString(),
+                DepartureCity = touristRouteFromRepo.DepartureCity.ToString()
+            };
+
+            return Ok(touristRouteDto);
         }
     }
 }
