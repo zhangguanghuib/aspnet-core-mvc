@@ -63,5 +63,10 @@ namespace FakeXiecheng.API.Services
         {
             throw new NotImplementedException();
         }
+
+        TouristRoutePicture ITouristRouteRepository.GetPicture(int pictureId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

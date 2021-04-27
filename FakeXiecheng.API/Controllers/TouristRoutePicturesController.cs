@@ -44,5 +44,24 @@ namespace FakeXiecheng.API.Controllers
             return Ok(_mapper.Map<IEnumerable<TouristRoutePictureDto>>(picturesFromRepo));
 
         }
+
+        [HttpGet("{pictureId}")]
+        public IActionResult GetPicture(Guid touristRouteId,  int pictureId)
+        {
+            if (!_touristRouteRepository.TouristRouteExist(touristRouteId))
+            {
+                return NotFound("The tourist route did not exist");
+            }
+
+            var pictureFromRepo = _touristRouteRepository.GetPicture(pictureId);
+
+            if(pictureFromRepo == null)
+            {
+                return NotFound("The tourist route picture did not exist");
+            }
+
+            return Ok(_mapper.Map<TouristRoutePictureDto>(pictureFromRepo));
+
+        }
     }
 }
