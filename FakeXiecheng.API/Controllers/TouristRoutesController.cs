@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using System.Text.RegularExpressions;
 
 namespace FakeXiecheng.API.Controllers
 {
@@ -27,8 +28,20 @@ namespace FakeXiecheng.API.Controllers
         //api/touristRoutes?keyword="?"
         [HttpGet]
         [HttpHead]
-        public IActionResult GetTouristRoutes([FromQuery] string keyword)
+        public IActionResult GetTouristRoutes(
+            [FromQuery] string keyword,
+            string rating //lessThan, largerThan, equalTo
+            )
         {
+            Regex regex = new Regex(@"([A-Za-z0-9\-])(\d+)");
+            string operatorType;
+            int ratingValue;
+            Match match = regex.Match(rating);
+            if (match.Success)
+            {
+                operatorType = match.Groups[1].Value;
+                ratingValue = int.Parse(match.Groups[2].Value);
+            }
             var touristRouteFromRepo = _touristRouteRepository.GetTouristRoutes(keyword);
             if (touristRouteFromRepo == null || touristRouteFromRepo.Count() <= 0)
             {
