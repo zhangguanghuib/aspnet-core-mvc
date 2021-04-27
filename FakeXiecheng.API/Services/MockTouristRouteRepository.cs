@@ -49,7 +49,7 @@ namespace FakeXiecheng.API.Services
             return _routes.FirstOrDefault<TouristRoute>(n=>n.Id == touristRouteId);
         }
 
-        IEnumerable<TouristRoute> ITouristRouteRepository.GetTouristRoutes()
+        IEnumerable<TouristRoute> ITouristRouteRepository.GetTouristRoutes(string keyword)
         {
             return _routes;
         }

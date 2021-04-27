@@ -24,11 +24,12 @@ namespace FakeXiecheng.API.Controllers
             this._mapper = mapper;
         }
 
+        //api/touristRoutes?keyword="?"
         [HttpGet]
         [HttpHead]
-        public IActionResult GetTouristRoutes()
+        public IActionResult GetTouristRoutes([FromQuery] string keyword)
         {
-            var touristRouteFromRepo = _touristRouteRepository.GetTouristRoutes();
+            var touristRouteFromRepo = _touristRouteRepository.GetTouristRoutes(keyword);
             if (touristRouteFromRepo == null || touristRouteFromRepo.Count() <= 0)
             {
                 return NotFound("没有旅游路线");
