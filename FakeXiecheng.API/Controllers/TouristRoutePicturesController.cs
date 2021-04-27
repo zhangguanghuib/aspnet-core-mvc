@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FakeXiecheng.API.Services;
 using AutoMapper;
+using FakeXiecheng.API.Dtos;
 
 namespace FakeXiecheng.API.Controllers
 {
@@ -23,6 +24,25 @@ namespace FakeXiecheng.API.Controllers
         {
             _touristRouteRepository = touristRouteRepository ?? throw new ArgumentNullException(nameof(touristRouteRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+        }
+
+        [HttpGet]
+        public IActionResult GetPictureListForTouristRoute(Guid touristRouteId)
+        {
+            if(!_touristRouteRepository.TouristRouteExist(touristRouteId))
+            {
+                return NotFound("Tourist Route did not exist");
+            }
+
+            var picturesFromRepo = _touristRouteRepository.GetPicturesByTouristRouteId(touristRouteId);
+
+            if (picturesFromRepo == null || picturesFromRepo.Count() <= 0)
+            {
+                return NotFound("The tourist route picture does not exist");
+            }
+
+            return Ok(_mapper.Map<IEnumerable<TouristRoutePictureDto>>(picturesFromRepo));
+
         }
     }
 }

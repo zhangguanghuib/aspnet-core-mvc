@@ -53,5 +53,15 @@ namespace FakeXiecheng.API.Services
         {
             return _routes;
         }
+
+        bool ITouristRouteRepository.TouristRouteExist(Guid touristRouteId)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<TouristRoutePicture> ITouristRouteRepository.GetPicturesByTouristRouteId(Guid touristRouteId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

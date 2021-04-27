@@ -10,5 +10,9 @@ namespace FakeXiecheng.API.Services
     {
         public IEnumerable<TouristRoute> GetTouristRoutes();
         public TouristRoute GetTouristRoute(Guid touristRouteId);
+
+        public bool TouristRouteExist(Guid touristRouteId);
+
+        public IEnumerable<TouristRoutePicture> GetPicturesByTouristRouteId(Guid touristRouteId);
     }
 }

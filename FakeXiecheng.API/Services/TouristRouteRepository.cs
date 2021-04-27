@@ -26,5 +26,17 @@ namespace FakeXiecheng.API.Services
         {
             return _context.TouristRoutes;
         }
+
+        IEnumerable<TouristRoutePicture> ITouristRouteRepository.GetPicturesByTouristRouteId(Guid touristRouteId)
+        {
+            return _context.TouristRoutePictures
+                .Where(p => p.TouristRouteId == touristRouteId)
+                .ToList<TouristRoutePicture>();
+        }
+
+        bool ITouristRouteRepository.TouristRouteExist(Guid touristRouteId)
+        {
+            return _context.TouristRoutes.Any<TouristRoute>(t => t.Id == touristRouteId);
+        }
     }
 }
