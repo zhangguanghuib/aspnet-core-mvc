@@ -23,7 +23,7 @@ namespace FakeXiecheng.API.Services
             return _context.TouristRoutes.Include(t => t.TouristRoutePictures).FirstOrDefault<TouristRoute>(t => t.Id == touristRouteId);
         }
 
-        public IEnumerable<TouristRoute> GetTouristRoutes(string keyword, string ratingOperator, int ratingValue)
+        public IEnumerable<TouristRoute> GetTouristRoutes(string keyword, string ratingOperator, int? ratingValue)
         {
             IQueryable<TouristRoute> result = _context
                 .TouristRoutes
