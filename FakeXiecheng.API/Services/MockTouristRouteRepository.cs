@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FakeXiecheng.API.Services
 {
-    public class MockTouristRouteRepository : ITouristRouteRepository
+   // public class MockTouristRouteRepository : ITouristRouteRepository
+      public class MockTouristRouteRepository 
     {
         private List<TouristRoute> _routes;
 
@@ -44,27 +45,27 @@ namespace FakeXiecheng.API.Services
                 InitializeTouristRoutes();
             }
         }
-        TouristRoute ITouristRouteRepository.GetTouristRoute(Guid touristRouteId)
+        TouristRoute GetTouristRoute(Guid touristRouteId)
         {
             return _routes.FirstOrDefault<TouristRoute>(n=>n.Id == touristRouteId);
         }
 
-        IEnumerable<TouristRoute> ITouristRouteRepository.GetTouristRoutes(string keyword)
+        IEnumerable<TouristRoute> GetTouristRoutes(string keyword, string ratingOperator, int ratingValue)
         {
             return _routes;
         }
 
-        bool ITouristRouteRepository.TouristRouteExist(Guid touristRouteId)
+        bool TouristRouteExist(Guid touristRouteId)
         {
             throw new NotImplementedException();
         }
 
-        IEnumerable<TouristRoutePicture> ITouristRouteRepository.GetPicturesByTouristRouteId(Guid touristRouteId)
+        IEnumerable<TouristRoutePicture> GetPicturesByTouristRouteId(Guid touristRouteId)
         {
             throw new NotImplementedException();
         }
 
-        TouristRoutePicture ITouristRouteRepository.GetPicture(int pictureId)
+        TouristRoutePicture GetPicture(int pictureId)
         {
             throw new NotImplementedException();
         }
