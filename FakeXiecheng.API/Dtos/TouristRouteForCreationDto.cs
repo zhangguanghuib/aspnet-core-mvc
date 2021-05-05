@@ -1,14 +1,22 @@
 ﻿using FakeXiecheng.API.Models;
+using FakeXiecheng.API.ValidationAttributes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace FakeXiecheng.API.Dtos
 {
-    public class TouristRouteForCreationDto
+    [TouristRouteTitleMustBeDifferentFromDescriptionAttribute]
+    public class TouristRouteForCreationDto//: IValidatableObject
     {
+        [Required(ErrorMessage ="Title can't be null")]
+        [MaxLength(100)]
         public string Title { get; set; }
+
+        [Required]
+        [MaxLength(1500)]
         public string Description { get; set; }
         //public decimal OriginalPrice { get; set; }
         //public double? DiscountPercentage { get; set; }
@@ -24,5 +32,15 @@ namespace FakeXiecheng.API.Dtos
         public string TripType { get; set; }
         public string DepartureCity { get; set; }
         public ICollection<TouristRoutePictureForCreationDto> TouristRoutePictures { get; set; } = new List<TouristRoutePictureForCreationDto>();
+
+        //public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        //{
+        //    if(Title == Description)
+        //    {
+        //        yield return new ValidationResult(
+        //            "Title should be different from Description",
+        //            new[] { "TouristRouteForCreationDto" });
+        //    }
+        //}
     }
 }
