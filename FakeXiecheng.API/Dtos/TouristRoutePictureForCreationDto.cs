@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace FakeXiecheng.API.Dtos
 {
-    public class TouristRoutePictureDto
+    public class TouristRoutePictureForCreationDto
     {
         public string Url { get; set; }
-
     }
 }
