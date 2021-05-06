@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using FakeXiecheng.API.ResourceParameters;
 using FakeXiecheng.API.Models;
 using Microsoft.AspNetCore.JsonPatch;
+using FakeXiecheng.API.Helper;
 
 namespace FakeXiecheng.API.Controllers
 {
@@ -152,7 +153,22 @@ namespace FakeXiecheng.API.Controllers
             _touristRouteRepository.Save();
 
             return NoContent();
+        }
 
+        [HttpDelete("({touristIDs})")]
+        public IActionResult DeleteByIds(
+            [ModelBinder(BinderType = typeof(ArrayModelBinder))][FromRoute] IEnumerable<Guid> touristIDs)
+        {
+            if(touristIDs == null)
+            {
+                return BadRequest();
+            }
+
+            var touristRoutesFromRepo = _touristRouteRepository.GetTouristRoutesByIDList(touristIDs);
+            _touristRouteRepository.DeleteTouristRoutes(touristRoutesFromRepo);
+            _touristRouteRepository.Save();
+
+            return NoContent();
         }
     }
 }
