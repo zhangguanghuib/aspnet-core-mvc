@@ -8,19 +8,19 @@ namespace FakeXiecheng.API.Services
 {
     public interface ITouristRouteRepository
     {
-        public IEnumerable<TouristRoute> GetTouristRoutes(string keyword, string ratingOperator, int? ratingValue);
-        public TouristRoute GetTouristRoute(Guid touristRouteId);
-        public IEnumerable<TouristRoute> GetTouristRoutesByIDList(IEnumerable<Guid> ids);
-        public bool TouristRouteExist(Guid touristRouteId);
-        public IEnumerable<TouristRoutePicture> GetPicturesByTouristRouteId(Guid touristRouteId);
-        public TouristRoutePicture GetPicture(int pictureId);
+        public Task<IEnumerable<TouristRoute>> GetTouristRoutesAsync(string keyword, string ratingOperator, int? ratingValue);
+        public Task<TouristRoute> GetTouristRouteAsync(Guid touristRouteId);
+        public Task<IEnumerable<TouristRoute>> GetTouristRoutesByIDListAsync(IEnumerable<Guid> ids);
+        public Task<bool> TouristRouteExistAsync(Guid touristRouteId);
+        public Task<IEnumerable<TouristRoutePicture>> GetPicturesByTouristRouteIdAsync(Guid touristRouteId);
+        public Task<TouristRoutePicture> GetPictureAsync(int pictureId);
 
         void AddTouristRoute(TouristRoute touristRoute);
         void AddTouristRoutePicture(Guid touristRouteId, TouristRoutePicture touristRoutePicture);
         void DeleteTouristRoute(TouristRoute touristRoute);
         public void DeleteTouristRoutes(IEnumerable<TouristRoute> touristRoutes);
         void DeleteTouristRoutePicture(TouristRoutePicture touristRoutePicture);
-        bool Save();
+        public Task<bool> SaveAsync();
 
     }
 }
