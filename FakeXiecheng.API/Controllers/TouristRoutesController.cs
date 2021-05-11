@@ -12,6 +12,7 @@ using FakeXiecheng.API.ResourceParameters;
 using FakeXiecheng.API.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using FakeXiecheng.API.Helper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FakeXiecheng.API.Controllers
 {
@@ -79,6 +80,7 @@ namespace FakeXiecheng.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> CreateTouristRoute([FromBody] TouristRouteForCreationDto touristRouteForCreationDto)
         {
             var touristRouteModel = _mapper.Map<TouristRoute>(touristRouteForCreationDto);
